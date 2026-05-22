@@ -8,14 +8,12 @@ def main():
             SYNDROME STRIKE
     ====================================
 
-    A two-player coding theory game
-    where players repair and sabotage
-    codewords using syndrome decoding.
+    A two-player coding theory game where players repair and 
+    sabotage codewords using syndrome decoding.
 
     --------------- MECHANICS ---------------
 
     • Each player is given:
-        - A correct codeword
         - A corrupted codeword with 1 error
 
     • Players take turns making moves.
@@ -26,27 +24,19 @@ def main():
         - Their own Hamming distance
         - All player's color status
 
-    • Players CANNOT see the exact
-    Hamming distance of their opponent.
-
-    • Instead, the opponent's condition
+    • The opponent's condition
     is shown using a color status system.
 
     ------------- STATUS COLORS -------------
 
     GREEN
-    • Opponent has exactly 1 error
-    • Their codeword is very close
-    to the correct codeword
+    • Opponent has exactly 1 error left
 
     YELLOW
-    • Opponent is still inside the
-    decoding sphere
-    • Recovery is still possible
+    • Opponent is still inside the decoding sphere
 
     RED
-    • Opponent is outside the
-    decoding sphere
+    • Opponent is outside the decoding sphere
     • Their codeword is heavily corrupted
 
     --------------- MOVES -------------------
@@ -75,11 +65,15 @@ def main():
 
 
     ====================================
-                GOOD LUCK!
+            CHOOSE DIFFICULTY
     ====================================
+    1. [7,4] Hamming Code
+    2. Custom
     """)
 
-    game = Game()
+    difficulty = input("Choose difficulty: ").strip()
+
+    game = Game(difficulty)
     game.run()
 
 
